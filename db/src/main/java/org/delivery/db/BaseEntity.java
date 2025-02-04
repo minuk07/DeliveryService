@@ -7,10 +7,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 @MappedSuperclass //따로 mapping하지 않음.
 @Data
-@Builder
+@SuperBuilder
 public class BaseEntity {
 
     @Id
