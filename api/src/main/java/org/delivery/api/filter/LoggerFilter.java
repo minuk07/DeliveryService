@@ -21,6 +21,8 @@ public class LoggerFilter implements Filter {
         var req = new ContentCachingRequestWrapper((HttpServletRequest) servletRequest); //형변환 -> 생성자 메소드로 객체 생성
         var res = new ContentCachingResponseWrapper((HttpServletResponse) servletResponse);
 
+        log.info("INT URI : {}", req.getRequestURI());
+
         //--------------------------실행전-----------------------------//
         filterChain.doFilter(req, res);
         //--------------------------실행후-----------------------------//

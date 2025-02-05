@@ -3,6 +3,7 @@ package org.delivery.api.account;
 import lombok.RequiredArgsConstructor;
 import org.delivery.api.account.model.AccountMeResponse;
 import org.delivery.api.common.api.Api;
+import org.delivery.api.common.error.ErrorCode;
 import org.delivery.api.common.error.UserErrorCode;
 import org.delivery.db.account.AccountEntity;
 import org.delivery.db.account.AccountRepository;
@@ -21,13 +22,18 @@ public class AccountApiController {
 
     @GetMapping("/me")
     public Api<Object> me(){
+
         var response = AccountMeResponse.builder()
                 .name("홍길동")
                 .email("A@email.com")
                 .registeredAt(LocalDateTime.now())
                 .build();
 
-        return Api.ERROR(UserErrorCode.USER_NOT_FOUNT, "홍길동이라는 사용자 없음.");
+        var str = "안녕하세요";
+        var age = 0;
+        Integer.parseInt(str);
+
+        return Api.OK(response);
     }
 
 }
