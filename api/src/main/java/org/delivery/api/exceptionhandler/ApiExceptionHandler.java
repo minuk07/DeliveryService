@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Slf4j
-@RestControllerAdvice
+//@RestControllerAdvice
 @Order(value = Integer.MIN_VALUE )
 public class ApiExceptionHandler {
 

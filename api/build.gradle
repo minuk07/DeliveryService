@@ -44,7 +44,7 @@ dependencies {
     implementation project(':db')
 
     //swagger
-    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0' // 최신 안정 버전
 }
 
 test {

@@ -7,9 +7,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Slf4j
-@RestController
+//@RestControllerAdvice
 @Order(value = Integer.MAX_VALUE) // 가장 마지막에 실행 적용.
 public class GlobalExceptionHandler {
 
