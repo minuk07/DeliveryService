@@ -41,8 +41,14 @@ public class UserService {
     }
 
     //email과 id에 맞는  유저 찾기
-    public UserEntity getUserWithThrow(String email, String password){
+    public UserEntity   getUserWithThrow(String email, String password){
         return userRepository.findFirstByEmailAndPasswordAndStatusOrderByIdDesc(email, password, UserStatus.REGISTERED)
+                .orElseThrow(() -> new ApiException(UserErrorCode.USER_NOT_FOUNT)); //없으면 null을 반환 해야 함.
+    }
+
+    //오버로딩
+    public UserEntity   getUserWithThrow(Long userId){
+        return userRepository.findFirstByIdAndStatusOrderByIdDesc(userId, UserStatus.REGISTERED)
                 .orElseThrow(() -> new ApiException(UserErrorCode.USER_NOT_FOUNT)); //없으면 null을 반환 해야 함.
     }
 }
