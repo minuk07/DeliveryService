@@ -19,7 +19,7 @@ public class StoreBusiness {
 
     private final StoreConverter storeConverter;
 
-    public StoreResponse register(StoreRegisterRequest storeRegisterRequest){
+    public StoreResponse register(StoreRegisterRequest storeRegisterRequest){ //상점 등록하는 비즈니스 로직
         // request -> entity -> response
         var entity = storeConverter.toEntity(storeRegisterRequest);
         var newEntity = storeService.register(entity);
@@ -28,7 +28,7 @@ public class StoreBusiness {
     }
 
     //조회
-    public List<StoreResponse> searchCategory(StoreCategory storeCategory){
+    public List<StoreResponse> searchCategory(StoreCategory storeCategory){ //카테고리별 리스트를 반환하는 비즈니스 로직
         // entity list -> response list
         var storeList = storeService.searchByCategory(storeCategory);
 
