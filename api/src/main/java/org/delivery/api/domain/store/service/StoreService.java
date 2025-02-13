@@ -46,7 +46,7 @@ public class StoreService {
         return list;
     }
 
-    //전체 스토어
+    //전체 스토어 반환
     public List<StoreEntity> registerStore(){
         var list = storeRepository.findAllByStatusOrderByIdDesc(StoreStatus.REGISTERED);
         return list;
