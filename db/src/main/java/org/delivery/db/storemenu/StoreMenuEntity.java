@@ -33,7 +33,7 @@ public class StoreMenuEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private StoreMenuStatus status;
 
-    @Column(length =200l, nullable = false)
+    @Column(length =200, nullable = false)
     private String thumbnailUrl;
 
     private int likeCount;
